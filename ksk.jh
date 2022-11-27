@@ -1,0 +1,43 @@
+application { 
+  config {
+    baseName ksk95
+    applicationType monolith
+    authenticationType oauth2
+    packageName org.bedd.ksk95
+    prodDatabaseType mysql
+    testFrameworks [protractor]
+  }
+  entities *
+}
+
+entity Student {
+	lastName String required,
+	firstName String required
+	photo ImageBlob required
+	type Belt required
+	type Gender required
+	dateOfBirth LocalDate required
+	phone String required
+	emailAddress String required
+	Weight Double 
+	
+	
+}
+
+enum Belt {
+  White,
+  Yellow,
+  Orange,
+  Green,
+  Blue,
+  Brown,
+  Black
+}
+
+enum Gender {
+  Female,
+  Male
+}
+
+
+paginate student with pagination
